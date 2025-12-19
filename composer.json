@@ -1,0 +1,27 @@
+{
+  "name": "datbui/async-chat-server",
+  "description": "Async Chat Server using ReactPHP - Converting Python asyncio to PHP",
+  "type": "project",
+  "require": {
+    "php": ">=7.4",
+    "react/socket": "^1.13",
+    "react/event-loop": "^1.4",
+    "react/stream": "^1.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AsyncChat\\": "src/"
+    }
+  },
+  "scripts": {
+    "echo-server": "php echo_server/echo_server_async.php",
+    "echo-client": "php echo_server/echo_client.php",
+    "chat-server": "php chat_server/chat_server_async.php",
+    "chat-client": "php chat_server/chat_client.php",
+    "stress-test": "php performance_test/stress_test.php",
+    "benchmark": "php performance_test/benchmark.php"
+  }
+}
