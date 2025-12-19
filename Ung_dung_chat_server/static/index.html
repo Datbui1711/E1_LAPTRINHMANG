@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 Chat App - Real-time Messaging</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen active">
+            <div class="login-box">
+                <div class="logo">
+                    <div class="logo-icon">💬</div>
+                    <h1>Chat App</h1>
+                    <p class="subtitle">Kết nối và trò chuyện thời gian thực</p>
+                </div>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="nickname">Nhập tên của bạn</label>
+                        <input 
+                            type="text" 
+                            id="nickname" 
+                            placeholder="Ví dụ: Huy Võ" 
+                            maxlength="20"
+                            required 
+                            autocomplete="off"
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Tham gia Chat</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </form>
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>Real-time</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🔒</span>
+                        <span>An toàn</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🌐</span>
+                        <span>Multi-user</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Screen -->
+        <div id="chat-screen" class="screen">
+            <div class="chat-container">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2>💬 Chat App</h2>
+                        <div class="user-status">
+                            <span class="status-dot"></span>
+                            <span id="current-user-name">User</span>
+                        </div>
+                    </div>
+                    
+                    <div class="online-users">
+                        <h3>
+                            <span>👥 Online</span>
+                            <span class="user-count" id="user-count">0</span>
+                        </h3>
+                        <ul id="user-list"></ul>
+                    </div>
+                    
+                    <div class="sidebar-footer">
+                        <button id="logout-btn" class="btn btn-secondary">
+                            <span>Thoát</span>
+                            <span>🚪</span>
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Main Chat Area -->
+                <main class="chat-main">
+                    <div class="chat-header">
+                        <div class="chat-info">
+                            <h2>Phòng Chat Chung</h2>
+                            <p id="typing-indicator" class="typing-indicator"></p>
+                        </div>
+                    </div>
+
+                    <div class="messages-container" id="messages">
+                        <!-- Messages will be inserted here -->
+                    </div>
+
+                    <div class="chat-input-container">
+                        <form id="message-form" class="message-form">
+                            <div class="input-wrapper">
+                                <button type="button" class="emoji-btn" id="emoji-btn">😊</button>
+                                <input 
+                                    type="text" 
+                                    id="message-input" 
+                                    placeholder="Nhập tin nhắn của bạn..." 
+                                    autocomplete="off"
+                                    maxlength="500"
+                                >
+                                <button type="submit" class="send-btn" id="send-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="emoji-picker" id="emoji-picker"></div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
